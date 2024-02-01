@@ -1,6 +1,6 @@
 # kdf
 
-A new Flutter project.
+My movie application written in Flutter using the IMDb API, made in 2020.
 
 ## Getting Started
 
