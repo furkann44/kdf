@@ -46,7 +46,7 @@ class Repository {
     //http request, catching error like no internet connection.
     //If no internet is available for example response is
     //TODO restricted language to english, feel free to remove that
-     http.Response response = await http.get("https://www.googleapis.com/books/v1/volumes?q=$input&key=AIzaSyBl7WCcJOdfouxi75LjQyh-hNgQQP--ZjU&langRestrict=tr")
+     http.Response response = await http.get("https://www.googleapis.com/books/v1/volumes?q=$input&key="key"&langRestrict=tr")
          .catchError((resp) {});
      
      if(response == null) {
@@ -77,7 +77,7 @@ class Repository {
   }
 
   Future<ParsedResponse<Book>> getBook(String id) async {
-    http.Response response = await http.get("https://www.googleapis.com/books/v1/volumes?q=flowers&key=AIzaSyBl7WCcJOdfouxi75LjQyh-hNgQQP--ZjU/$id")
+    http.Response response = await http.get("https://www.googleapis.com/books/v1/volumes?q=flowers&key="key"$id")
         .catchError((resp) {});
     if(response == null) {
       return new ParsedResponse(NO_INTERNET, null);
